@@ -1,0 +1,6 @@
+
+setHelp("ns", "Returns the current time in nanoseconds.")
+native ns
+
+setHelp("ms", "Returns the current time in milliseconds.")
+native ms
