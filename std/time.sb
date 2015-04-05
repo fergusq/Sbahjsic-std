@@ -1,4 +1,3 @@
-
 setHelp("ns", "Returns the current time in nanoseconds.")
 native ns
 
