@@ -1,0 +1,10 @@
+setHelp(putstr, "Prints its argument as a string.")
+native putstr
+
+setHelp(putln, "Prints its argument and a newline.")
+function putln(arg)
+	putstr(_string(arg) + "\n")
+endfunction
+
+setHelp(input, "Returns line of user input or false if an error occurs.")
+native input

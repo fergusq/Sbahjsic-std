@@ -1,31 +1,31 @@
-setHelp("fpi", "The closest float to the mathematical constant pi.")
+setHelp(fpi, "The closest float to the mathematical constant pi.")
 fpi = 3.1415927
 
-setHelp("pi", "A value close to the mathematical constant pi.")
+setHelp(pi, "A value close to the mathematical constant pi.")
 pi = 3.14159265358979323846264338327950288419716939937510
 
-setHelp("sin", "Returns the sin of its argument.")
+setHelp(sin, "Returns the sin of its argument.")
 native sin
 
-setHelp("cos", "Returns the cos of its argument.")
+setHelp(cos, "Returns the cos of its argument.")
 native cos
 
-setHelp("tan", "Returns the tan of its argument.")
+setHelp(tan, "Returns the tan of its argument.")
 native tan
 
-setHelp("asin", "Returns the arcsin of its argument.")
+setHelp(asin, "Returns the arcsin of its argument.")
 native asin
 
-setHelp("acos", "Returns the arccos of its argument.")
+setHelp(acos, "Returns the arccos of its argument.")
 native acos
 
-setHelp("atan", "Returns the arctan of its argument.")
+setHelp(atan, "Returns the arctan of its argument.")
 native atan
 
-setHelp("sum", "Returns the sum of its arguments.")
+setHelp(sum, "Returns the sum of its arguments.")
 native sum
 
-setHelp("max", "Returns the larger argument.")
+setHelp(max, "Returns the larger argument.")
 function max(arg1, arg2)
 	if arg1 >= arg2
 		return arg1
@@ -34,7 +34,7 @@ function max(arg1, arg2)
 	endif
 endfunction
 
-setHelp("min", "Returns the smaller argument.")
+setHelp(min, "Returns the smaller argument.")
 function min(arg1, arg2)
 	if arg1 <= arg2
 		return arg1
