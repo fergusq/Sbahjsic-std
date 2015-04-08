@@ -1,0 +1,32 @@
+setHelp(substr, "Makes a substring. The first argument is the string, the second is the start index and the third the end index (both inclusive.)")
+native substr
+
+setHelp(strReplace, "Replaces something in a string. The first argument is the string, the second the string to replace and the third the replacement.")
+native strReplace
+
+setHelp(string_index, "Returns the first found index of some string in some string. The first argument is the string searched, the second the string to search.")
+native string_index
+
+setHelp(strLen, "Returns the length of some string.")
+native strLen
+
+setHelp(strstartsw, "Returns whether the first argument starts with the second argument.")
+function strstartsw(arg1, arg2)
+	arg1 = substr(arg1, 0, strLen(arg2)-1)
+	if arg1 == arg2
+		return true
+	else
+		return false
+	endif
+endfunction
+
+setHelp(strendsw, "Returns whether the first argument ends with the second argument.")
+function strendsw(arg1, arg2)
+	arg1 = substr(arg1, strLen(arg1) - strLen(arg2), strLen(arg1)-1)
+	print("arg1 = " + arg1)
+	if arg1 == arg2
+		return true
+	else
+		return false
+	endif
+endfunction
