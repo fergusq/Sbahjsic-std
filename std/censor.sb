@@ -1,0 +1,25 @@
+import string
+
+setHelp(censor, "Censors its argument string.")
+function censor(arg)
+	arg = strReplace(arg, "ass", "butt")
+	arg = strReplace(arg, "fuck", "sex")
+	arg = strReplace(arg, "shit", "poop")
+	arg = strReplace(arg, "bitch", "female dog")
+	arg = strReplace(arg, "kill", "hug")
+	arg = strReplace(arg, "evil", "naughty")
+	arg = strReplace(arg, "black", "african american")
+	return arg
+endfunction
+
+setHelp(uncensor, "Uncensors its argument string.")
+function uncensor(arg)
+	arg = strReplace(arg, "butt", "ass")
+	arg = strReplace(arg, "sex", "fuck")
+	arg = strReplace(arg, "poop", "shit")
+	arg = strReplace(arg, "female dog", "bitch")
+	arg = strReplace(arg, "hug", "kill")
+	arg = strReplace(arg, "naughty", "evil")
+	arg = strReplace(arg, "african american", "black")
+	return arg
+endfunction

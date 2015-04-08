@@ -30,3 +30,9 @@ function strendsw(arg1, arg2)
 		return false
 	endif
 endfunction
+
+setHelp(ucs, "Transforms its argument into upper case.")
+native ucs
+
+setHelp(lcs, "Transforms its argument into lower case.")
+native lcs
