@@ -1,4 +1,4 @@
-import string
+dependency(string)
 
 setHelp(censor, "Censors its argument string.")
 function censor(arg)
