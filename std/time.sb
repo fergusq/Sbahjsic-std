@@ -3,3 +3,16 @@ native ns
 
 setHelp(ms, "Returns the current time in milliseconds.")
 native ms
+
+setHelp(day, "Returns the current day.")
+native day
+
+setHelp(month, "Returns the current month.")
+native month
+
+setHelp(year, "Returns the current year.")
+native year
+
+function date()
+	return _string(day()) + "." + _string(month()) + "." + _string(year()) 
+endfunction

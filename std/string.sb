@@ -23,7 +23,6 @@ endfunction
 setHelp(strendsw, "Returns whether the first argument ends with the second argument.")
 function strendsw(arg1, arg2)
 	arg1 = substr(arg1, strLen(arg1) - strLen(arg2), strLen(arg1)-1)
-	print("arg1 = " + arg1)
 	if arg1 == arg2
 		return true
 	else
