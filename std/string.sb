@@ -1,3 +1,5 @@
+target("1.0.0")
+
 setHelp(substr, "Makes a substring. The first argument is the string, the second is the start index and the third the end index (both inclusive.)")
 native substr
 

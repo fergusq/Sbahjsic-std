@@ -1,3 +1,5 @@
+target("1.0.0")
+
 setHelp(fpi, "The closest float to the mathematical constant pi.")
 fpi = 3.1415927
 

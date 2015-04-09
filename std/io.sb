@@ -1,3 +1,5 @@
+target("1.0.0")
+
 setHelp(putstr, "Prints its argument as a string.")
 native putstr
 
