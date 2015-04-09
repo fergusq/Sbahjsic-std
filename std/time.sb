@@ -13,6 +13,7 @@ native month
 setHelp(year, "Returns the current year.")
 native year
 
+setHelp(date, "Returns the current date.")
 function date()
 	return _string(day()) + "." + _string(month()) + "." + _string(year()) 
 endfunction
