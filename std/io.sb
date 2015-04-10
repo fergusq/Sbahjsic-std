@@ -10,3 +10,6 @@ endfunction
 
 setHelp(input, "Returns line of user input or false if an error occurs.")
 native input
+
+setHelp(real_input, "The real input function. Returns the next line of user input or undefined if an error occurs.")
+native real_input
