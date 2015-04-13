@@ -62,3 +62,10 @@ MAX_FLOAT = 340282300000000000000000000000000000000.0
 
 setHelp(MIN_FLOAT, "The minimum float.")
 MIN_FLOAT = (0.0-340282300000000000000000000000000000000.0)
+
+setHelp(abs, "Returns its argument as a positive integer.")
+function abs(a)
+	b=0-a
+	c = max(a,b)
+	return c
+endfunction
