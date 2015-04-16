@@ -1,0 +1,7 @@
+target("1.1.0")
+
+setHelp(ArrayCreate, "Returns an array that contains the arguments.")
+native ArrayCreate
+
+setHelp(sort, "Sorts its argument array.")
+native sort
