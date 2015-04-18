@@ -1,4 +1,4 @@
-target("1.0.0")
+target("1.1.0")
 
 setHelp(fpi, "The closest float to the mathematical constant pi.")
 fpi = 3.1415927
@@ -61,7 +61,7 @@ setHelp(MAX_FLOAT, "The maximum float.")
 MAX_FLOAT = 340282300000000000000000000000000000000.0
 
 setHelp(MIN_FLOAT, "The minimum float.")
-MIN_FLOAT = (0.0-340282300000000000000000000000000000000.0)
+MIN_FLOAT = (-340282300000000000000000000000000000000.0)
 
 setHelp(abs, "Returns its argument as a positive integer.")
 function abs(a)
