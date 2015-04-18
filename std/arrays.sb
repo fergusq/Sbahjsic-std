@@ -5,3 +5,6 @@ native ArrayCreate
 
 setHelp(sort, "Sorts its argument array.")
 native sort
+
+setHelp(len, "Returns the length of its argument.")
+native len
