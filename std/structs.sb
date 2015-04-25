@@ -1,0 +1,4 @@
+target("1.2.0")
+
+setHelp(CopyStruct, "Copies its argument struct.")
+native CopyStruct
