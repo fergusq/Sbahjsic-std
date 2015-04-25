@@ -1,0 +1,12 @@
+target("1.2.0")
+
+struct pointer
+	ref
+endstruct
+
+setHelp(pointer, "Creates a new pointer. Use x$ref to access and change its value.")
+function pointer(value)
+	p = new pointer
+	p$ref = value
+	return p
+endfunction
