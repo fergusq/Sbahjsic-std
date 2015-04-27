@@ -1,27 +1,41 @@
-target("1.1.0")
+target("1.2.0")
 
 dependency(string)
+dependency(arrays)
+dependency(structs)
+
+struct badword
+	uncensored
+	censored
+endstruct
+
+function badword(uncens, cens)
+	bw = new badword
+	bw$uncensored = uncens
+	bw$censored = cens
+	return bw
+endfunction
+
+badwords = ArrayCreate(badword("butt", "ass"), badword("sex", "fuck"), badword("poop", "shit"), badword("female dog", "bitch"), badword("hug", "kill"), badword("naughty", "evil"), badword("african american", "black"))
 
 setHelp(censor, "Censors its argument string.")
 function censor(arg)
-	arg = strReplace(arg, "ass", "butt")
-	arg = strReplace(arg, "fuck", "sex")
-	arg = strReplace(arg, "shit", "poop")
-	arg = strReplace(arg, "bitch", "female dog")
-	arg = strReplace(arg, "kill", "hug")
-	arg = strReplace(arg, "evil", "naughty")
-	arg = strReplace(arg, "black", "african american")
+	i = 0
+	while i < len(badwords)
+		bw = badwords[i]
+		arg = strReplace(arg, badwords[i]$censored, badwords[i]$uncensored)
+		i = i + 1
+	endwhile
 	return arg
 endfunction
 
 setHelp(uncensor, "Uncensors its argument string.")
 function uncensor(arg)
-	arg = strReplace(arg, "butt", "ass")
-	arg = strReplace(arg, "sex", "fuck")
-	arg = strReplace(arg, "poop", "shit")
-	arg = strReplace(arg, "female dog", "bitch")
-	arg = strReplace(arg, "hug", "kill")
-	arg = strReplace(arg, "naughty", "evil")
-	arg = strReplace(arg, "african american", "black")
+	i = 0
+	while i < len(badwords)
+		bw = badwords[i]
+		arg = strReplace(arg, badwords[i]$uncensored, badwords[i]$censored)
+		i = i + 1
+	endwhile
 	return arg
 endfunction
