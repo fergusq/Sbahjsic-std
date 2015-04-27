@@ -16,7 +16,7 @@ function badword(uncens, cens)
 	return bw
 endfunction
 
-badwords = ArrayCreate(badword("butt", "ass"), badword("sex", "fuck"), badword("poop", "shit"), badword("female dog", "bitch"), badword("hug", "kill"), badword("naughty", "evil"), badword("african american", "black"))
+badwords = ArrayCreate(badword("butt", "ass"), badword("sex", "fuck"), badword("poop", "shit"), badword("female dog", "bitch"), badword("hug", "kill"), badword("naughty", "evil"), badword("african american", "black"), badword("peepee", "penis"), badword("lies", "evolution"), badword("explode", "bang"), badword("wind", "blow"), badword("male chicken", "cock"), badword("investigator", "dick"), badword("satanism", "atheism"), badword("satanist", "atheist"), badword("life", "death"), badword("play", "torture"), badword("fun", "horror"), badword("kitten", "demon"), badword("node.js", "java"), badword("go", "python"), badword("sbahjsic", "haskell"))
 
 setHelp(censor, "Censors its argument string.")
 function censor(arg)
