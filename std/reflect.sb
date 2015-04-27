@@ -1,0 +1,28 @@
+target("1.2.0")
+
+setHelp(_Ops, "Returns the operators of some type.")
+native _Ops
+
+setHelp(_Fields, "Returns the fields of some type.")
+native _Fields
+
+setHelp(_Types, "Returns all defined types.")
+native _Types
+
+setHelp(_mksubt, "Makes its first argument the subtype of its second argument.")
+native _mksubt
+
+setHelp(_dlsubt, "Removes the second argument from the supertypes of the first argument.")
+native _dlsupt
+
+setHelp(DefBiOp, "Defines a function as a binary operator. The first argument is the type, the second the operator as a string and the third the function.")
+native DefBiOp
+
+setHelp(DefUnOp, "Defines a function as an unary operator. The first argument is the type, the second the operator string and third the function.")
+native DefUnOp
+
+setHelp(typename, "Returns the name of the given type, ex. int_type -> int")
+native typename
+
+setHelp(DEL_TYPE, "Deletes the given type.")
+native DEL_TYPE
