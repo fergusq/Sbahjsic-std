@@ -1,0 +1,4 @@
+target("1.2.0")
+
+setHelp(toJObj, "Converts its argument into a struct representing a Java object.")
+native toJObj
