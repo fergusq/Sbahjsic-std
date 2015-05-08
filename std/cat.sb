@@ -1,0 +1,143 @@
+import *
+
+struct cat
+	name
+	hunger
+	thirst
+	happiness
+	age_year
+	age_month
+endstruct
+
+cat = new cat
+money = 10
+absence = 0
+hasjob = true
+
+print "Syötä kissasi nimi!"
+cat$name = real_input()
+
+print "Syötä kissasi ikä!"
+cat$age_month = 6
+cat$age_year = ParseInt(real_input())
+
+cat$hunger = 1.0
+cat$thirst = 1.0
+cat$happiness = 100
+
+function nextturn()
+	while true
+
+		i = 0
+		while i < 1000
+			print("\n")
+			i = i + 1
+		endwhile
+
+		updateage()
+		updatehealth()
+		updatemoney()
+		printstats()
+		
+		print("Mitä haluat tehdä? [s=syötä (2😸\), j=juota (1😸\), t=mene töihin, l=leiki, e=ei mitään]")
+		in = real_input()
+		wenttowork = false
+
+		if in == "s"
+			cat$hunger = cat$hunger + 0.3
+			money = money - 2
+			cat$happiness = cat$happiness + 2
+		endif
+		if in == "j"
+			cat$thirst = cat$thirst + 0.3
+			money = money - 1
+			cat$happiness = cat$happiness + 2
+		endif
+		if in == "t"
+			if hasjob
+				money = money + 3
+				wenttowork = true
+				absence = 0
+			else
+				print "Sinulla ei ole työpaikkaa."
+			endif
+		endif
+		if in == "l"
+			cat$happiness = cat$happiness + 15
+		endif
+
+		if !wenttowork
+			absence = absence + 1
+		endif
+	endwhile
+endfunction
+
+function printstats()
+	print(cat$name + ", ikä " + (cat$age_year->string) + " v " + (cat$age_month->string) + " kk")
+	print("Nälkä: " + cat$hunger)
+	print("Jano: " + cat$thirst)
+	print("Terveys: " + gethealth())
+	print("Sinulla on " + (money->string) + "😸")
+endfunction
+
+function gethealth()
+	return cat$hunger * cat$thirst * ((cat$happiness->float) / 100.0)
+endfunction
+
+function updateage()
+	cat$age_month = (cat$age_month + 1)
+
+	if cat$age_month >= 12
+		cat$age_year = cat$age_year + 1
+		cat$age_month = 0
+	endif
+
+	if cat$age_month == 0
+		print("On " + cat$name + "n syntymäpäivät. Saat 5😸")
+		money = money + 5
+	endif
+endfunction
+
+function updatehealth()
+	cat$hunger = cat$hunger - 0.1
+	cat$thirst = cat$thirst - 0.1
+
+	if cat$hunger < 0
+		lose(cat$name + " kuoli nälkään.")
+	endif
+	if cat$hunger > 1
+		cat$hunger = 1.0
+	endif
+	if cat$thirst > 1
+		cat$thirst = 1.0
+	endif
+	if cat$thirst < 0
+		lose(cat$thirst + " kuoli janoon.")
+	endif
+
+	cat$happiness = cat$happiness - (10 - absence)
+	cat$happiness = cat$happiness - cat$age_year/5
+
+	if gethealth() < 0.25
+		lose("Eläinsuojelujärjestö otti " + cat$name + "n huostaan.")
+	endif
+endfunction
+
+function updatemoney()
+	if money < 0
+		lose("Rahat loppuivat!")
+	endif
+
+	if (absence > 12) & hasjob
+		print "Sait potkut töistä poissaolon vuoksi."
+		hasjob = false
+	endif
+endfunction
+
+function lose(msg)
+	print msg
+	while true
+	endwhile
+endfunction
+
+nextturn()
