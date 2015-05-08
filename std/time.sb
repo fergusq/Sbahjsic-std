@@ -19,3 +19,8 @@ setHelp(date, "Returns the current date.")
 function date()
 	return _string(day()) + "." + _string(month()) + "." + _string(year()) 
 endfunction
+
+setHelp(hour, "Returns the current hour.")
+function hour()
+	return _string(day()/24)
+endfunction
